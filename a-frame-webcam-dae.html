@@ -19,7 +19,7 @@ function load_hash(d){
 		
 		var
 			o = d.objects[i],
-			element_id = o.id.replace(':', '_')
+			element_id = 'fence_' + o.id.replace(':', '_')
 		;
 		
 		if(!document.getElementById(element_id)){
@@ -106,7 +106,7 @@ window.onload = function(){
 	
 	<div style="position: fixed; top: 10px; width:100%; text-align: center; z-index: 1; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;">
 		<div>
-			coords (u5): <span id="crd_longitude"></span>, <span id="crd_latitude"></span>
+			coords: <span id="crd_longitude"></span>, <span id="crd_latitude"></span>
 				(zero coords: <span id="zero_crd_longitude"></span>, <span id="zero_crd_latitude"></span>)
 		</div>
 		<div>
@@ -125,12 +125,20 @@ window.onload = function(){
 		<a-camera id="camera" user-height="1.6" gps-position compass-rotation><!--  --></a-camera>
 		
 		<a-assets id="assets">
-			<a-asset-item id="cc1" src="cc1.dae"></a-asset-item>
+			<!--
+			<a-asset-item id="fence_50_31_0040507_9_asset" src="fence_50_31_0040507_9.dae"></a-asset-item>
+			<a-asset-item id="fence_50_31_0040507_6_asset" src="fence_50_31_0040507_6.dae"></a-asset-item>
+			<a-asset-item id="fence_50_31_0040507_16_asset" src="fence_50_31_0040507_16.dae"></a-asset-item>
+			<a-asset-item id="fence_50_31_0040507_25_asset" src="fence_50_31_0040507_25.dae"></a-asset-item>
+			-->
 		</a-assets>
-		  <ar-geopose id="GT" lla=" 39.156138172714336 21.616912585176184" userotation="false"> 
-		    <a-entity meshline="lineWidth: 20; path: userPath; color: #E20049"></a-entity>
-		 </ar-geopose>    
-
+		
+		<a-entity id="fences">
+			<a-entity id="fence_50_31_0040507_9" collada-model="#fence_50_31_0040507_9_asset" transparent-texture gps-place="longitude: 21.61652; latitude: 39.15720"></a-entity>
+			<a-entity id="fence_50_31_0040507_6" collada-model="#fence_50_31_0040507_6_asset" transparent-texture gps-place="longitude: 37.469775988244; latitude: 55.154190366984"></a-entity>
+			<a-entity id="fence_50_31_0040507_16" collada-model="#fence_50_31_0040507_16_asset" transparent-texture gps-place="longitude: 37.469140087271; latitude: 55.153874109378"></a-entity>
+			<a-entity id="fence_50_31_0040507_25" collada-model="#fence_50_31_0040507_25_asset" transparent-texture gps-place="longitude: 37.470954400759; latitude: 55.153490379075"></a-entity>
+		</a-entity>
 		
 	</a-scene>
 </body>
