@@ -106,7 +106,7 @@ window.onload = function(){
 	
 	<div style="position: fixed; top: 10px; width:100%; text-align: center; z-index: 1; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;">
 		<div>
-			coords (u4): <span id="crd_longitude"></span>, <span id="crd_latitude"></span>
+			coords (u5): <span id="crd_longitude"></span>, <span id="crd_latitude"></span>
 				(zero coords: <span id="zero_crd_longitude"></span>, <span id="zero_crd_latitude"></span>)
 		</div>
 		<div>
@@ -127,10 +127,10 @@ window.onload = function(){
 		<a-assets id="assets">
 			<a-asset-item id="cc1" src="cc1.dae"></a-asset-item>
 		</a-assets>
-		
-		<a-entity id="fences">
-			<a-entity id="cc1.t" collada-model="#cc1" transparent-texture gps-place="longitude: 39.156138172714336; latitude: 21.616912585176184"></a-entity>
-		</a-entity>
+		  <ar-geopose id="GT" lla=" 39.156138172714336 21.616912585176184" userotation="false"> 
+		    <a-entity meshline="lineWidth: 20; path: userPath; color: #E20049"></a-entity>
+		 </ar-geopose>    
+
 		
 	</a-scene>
 </body>
