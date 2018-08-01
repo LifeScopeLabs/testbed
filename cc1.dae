@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2008/03/COLLADASchema" version="1.5.0">
+	<asset>
+		<contributor>
+			<authoring_tool>CINEMA4D 19.024 COLLADA Exporter</authoring_tool>
+		</contributor>
+		<created>2018-08-01T09:58:56Z</created>
+		<modified>2018-08-01T09:58:56Z</modified>
+		<unit meter="0.01" name="centimeter"/>
+		<up_axis>Y_UP</up_axis>
+	</asset>
+	<library_images>
+		<image id="ID3">
+			<init_from>
+				<ref>fence.png</ref>
+			</init_from>
+		</image>
+		<image id="ID5">
+			<init_from>
+				<ref>fence.png</ref>
+			</init_from>
+		</image>
+		<image id="ID9">
+			<init_from>
+				<ref>c1.png</ref>
+			</init_from>
+		</image>
+	</library_images>
+	<library_effects>
+		<effect id="ID2">
+			<profile_COMMON>
+				<newparam sid="ID4">
+					<sampler2D>
+						<instance_image url="#ID3"/>
+					</sampler2D>
+				</newparam>
+				<newparam sid="ID6">
+					<sampler2D>
+						<instance_image url="#ID5"/>
+					</sampler2D>
+				</newparam>
+				<technique sid="COMMON">
+					<blinn>
+						<diffuse>
+							<texture texture="ID4" texcoord="UVSET0"/>
+						</diffuse>
+						<transparent opaque="RGB_ZERO">
+							<texture texture="ID6" texcoord="UVSET0"/>
+						</transparent>
+						<transparency>
+							<float>1</float>
+						</transparency>
+						<index_of_refraction>
+							<float>1</float>
+						</index_of_refraction>
+					</blinn>
+				</technique>
+			</profile_COMMON>
+		</effect>
+		<effect id="ID8">
+			<profile_COMMON>
+				<newparam sid="ID10">
+					<sampler2D>
+						<instance_image url="#ID9"/>
+					</sampler2D>
+				</newparam>
+				<technique sid="COMMON">
+					<blinn>
+						<diffuse>
+							<texture texture="ID10" texcoord="UVSET0"/>
+						</diffuse>
+						<specular>
+							<color>0.2 0.2 0.2 1</color>
+						</specular>
+						<shininess>
+							<float>0.5</float>
+						</shininess>
+					</blinn>
+				</technique>
+			</profile_COMMON>
+		</effect>
+	</library_effects>
+	<library_materials>
+		<material id="ID1" name="fence">
+			<instance_effect url="#ID2"/>
+		</material>
+		<material id="ID7" name="Mat">
+			<instance_effect url="#ID8"/>
+		</material>
+	</library_materials>
+	<library_geometries>
+		<geometry id="ID13">
+			<mesh>
+				<source id="ID14">
+					<float_array id="ID15" count="24" digits="2490374">-307.706 -74.0805 4.71693 -307.706 74.0805 4.71693 307.706 -74.0805 4.71693 307.706 74.0805 4.71693 307.706 -74.0805 -4.71693 307.706 74.0805 -4.71693 -307.706 -74.0805 -4.71693 -307.706 74.0805 -4.71693</float_array>
+					<technique_common>
+						<accessor count="8" source="#ID15" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="ID16">
+					<float_array id="ID17" count="18" digits="2490374">0 0 1 1 0 -0 0 0 -1 -1 0 -0 0 1 -0 0 -1 -0</float_array>
+					<technique_common>
+						<accessor count="6" source="#ID17" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="ID18">
+					<float_array id="ID19" count="8" digits="2490374">0 0 0 1 1 1 1 0</float_array>
+					<technique_common>
+						<accessor count="4" source="#ID19" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="ID20">
+					<float_array id="ID21" count="2" digits="2490374">0 1</float_array>
+					<technique_common>
+						<accessor count="1" source="#ID21" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="ID22">
+					<input semantic="POSITION" source="#ID14"/>
+				</vertices>
+				<polylist count="2" material="Material1">
+					<input offset="0" semantic="VERTEX" source="#ID22" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#ID16" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#ID18" set="0"/>
+					<vcount>4 4</vcount>
+					<p>2 0 3 3 0 2 1 0 1 0 0 0 6 2 3 7 2 2 5 2 1 4 2 0</p>
+				</polylist>
+				<polylist count="4">
+					<input offset="0" semantic="VERTEX" source="#ID22" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#ID16" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#ID20" set="0"/>
+					<vcount>4 4 4 4</vcount>
+					<p>4 1 0 5 1 0 3 1 0 2 1 0 0 3 0 1 3 0 7 3 0 6 3 0 3 4 0 5 4 0 7 4 0 1 4 0 4 5 0 2 5 0 0 5 0 6 5 0</p>
+				</polylist>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_visual_scenes>
+		<visual_scene id="ID11">
+			<node id="ID12" name="Cube">
+				<translate sid="translate">476.756 74.1644 -0</translate>
+				<rotate sid="rotateY">0 1 0 -0</rotate>
+				<rotate sid="rotateX">1 0 0 0</rotate>
+				<rotate sid="rotateZ">0 0 1 -0</rotate>
+				<scale sid="scale">1 1 1</scale>
+				<instance_geometry url="#ID13">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Material1" target="#ID7">
+								<bind_vertex_input semantic="UVSET0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<scene>
+		<instance_visual_scene url="#ID11"/>
+	</scene>
+</COLLADA>
